@@ -21,7 +21,7 @@ function processInput () {
   fs.open('dbcreator.txt', 'a', 666, function( e, id ) {
    fs.write( id, text + os.EOL, null, 'utf8', function(){
     fs.close(id, function(){
-     console.log('Custom database is updated');
+     console.log('Custom database is updated, check the dbcreator.txt file');
      console.log('If the file is a virus, please submit the hash here:');
      console.log('\x1b[32m%s\x1b[0m', "boof.eu.org/other/av-hashes")
     });
