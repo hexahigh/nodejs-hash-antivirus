@@ -1,0 +1,18 @@
+{
+  "name": "virus-scanner",
+  "version": "1.0.0",
+  "description": "simple js virus scanner",
+  "main": "main.js",
+  "scripts": {
+    "update": "node update.js",
+    "custom": "node dbcreator.js",
+    "run": "node main.js"
+  },
+  "author": "Boofdev",
+  "license": "ISC",
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "fs": "^0.0.1-security",
+    "prompt-sync": "^4.2.0"
+  }
+}

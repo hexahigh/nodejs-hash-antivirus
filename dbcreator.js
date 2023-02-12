@@ -23,7 +23,7 @@ function processInput () {
     fs.close(id, function(){
      console.log('Custom database is updated');
      console.log('If the file is a virus, please submit the hash here:');
-     console.log('\x1b[32m%s\x1b[0m', "")
+     console.log('\x1b[32m%s\x1b[0m', "boof.eu.org/other/av-hashes")
     });
    });
   });
