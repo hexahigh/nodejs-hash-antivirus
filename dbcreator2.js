@@ -5,6 +5,9 @@ var crypto = require('crypto');
 var os = require("os");
 
 let arraynumber = 1
+let filetoadd2 = nil
+
+const filetoadd = prompt("Enter path/name of file/folder to be added: ");
 
 // Set delay to ms
 function delay(milliseconds) {
@@ -20,15 +23,15 @@ fs.readdir(filetoadd, (err, files) => {
   }
 
   const fileNamesAndExtensions = files.map((fileName) => {
-    const extension = path.extname(fileName);
-    const name = path.basename(fileName, extension);
-    return { name, extension };
+    const filePath = path.join(directoryPath, fileName);
+    const extension = path.extname(filePath);
+    const name = path.basename(filePath, extension);
+    return { filePath, extension };
   });
 
   console.log(fileNamesAndExtensions);
 });
 
-const filetoadd = prompt("Enter path/name of file/folder to be added: ");
 while(true) {
 const buff = fs.readFileSync(filetoadd2);
 var outputdata0 = crypto.createHash("md5").update(buff).digest("hex");
