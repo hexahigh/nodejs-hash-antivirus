@@ -32,13 +32,13 @@ fs.readdir(filetoadd, (err, files) => {
   console.log(fileNamesAndExtensions);
 });
 
-while (true) {
+while(true) {
   let filetoadd2 = fileNamesAndExtensions[arraynumber]
-  const buff = fs.readFileSync(filetoadd2);
-  var outputdata0 = crypto.createHash("md5").update(buff).digest("hex");
-  var outputdata = outputdata0.toString().toUpperCase();
+  let buff = fs.readFileSync(filetoadd2);
+  let outputdata0 = crypto.createHash("md5").update(buff).digest("hex");
+  let outputdata = outputdata0.toString().toUpperCase();
 
-  var text = outputdata;
+  let text = outputdata;
   processInput()
 
   //const directoryPath = '/path/to/directory'; // Replace with your directory path
