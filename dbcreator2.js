@@ -44,7 +44,7 @@ while(true) {
   //const directoryPath = '/path/to/directory'; // Replace with your directory path
 
   function processInput() {
-    fs.open('dbcreator.txt', 'a', 666, function (e, id) {
+    fs.open('customdb.txt', 'a', 666, function (e, id) {
       fs.write(id, text + os.EOL, null, 'utf8', function () {
         fs.close(id, function () {
           arraynumber = arraynumber + 1
