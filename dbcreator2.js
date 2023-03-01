@@ -11,9 +11,9 @@ const filetoadd = prompt("Enter path/name of file/folder to be added: ");
 
 // Set delay to ms
 function delay(milliseconds) {
-    return new Promise(resolve => {
-        setTimeout(resolve, milliseconds);
-    });
+  return new Promise(resolve => {
+    setTimeout(resolve, milliseconds);
+  });
 }
 
 fs.readdir(filetoadd, (err, files) => {
@@ -32,27 +32,27 @@ fs.readdir(filetoadd, (err, files) => {
   console.log(fileNamesAndExtensions);
 });
 
-while(true) {
-const buff = fs.readFileSync(filetoadd2);
-var outputdata0 = crypto.createHash("md5").update(buff).digest("hex");
-var outputdata = outputdata0.toString().toUpperCase();
+while (true) {
+  let filetoadd2 = fileNamesAndExtensions[arraynumber]
+  const buff = fs.readFileSync(filetoadd2);
+  var outputdata0 = crypto.createHash("md5").update(buff).digest("hex");
+  var outputdata = outputdata0.toString().toUpperCase();
 
-var text = outputdata;
-processInput()
+  var text = outputdata;
+  processInput()
 
-//const directoryPath = '/path/to/directory'; // Replace with your directory path
+  //const directoryPath = '/path/to/directory'; // Replace with your directory path
 
-function processInput () {     
-  fs.open('dbcreator.txt', 'a', 666, function( e, id ) {
-   fs.write( id, text + os.EOL, null, 'utf8', function(){
-    fs.close(id, function(){
-      let filetoadd2 = fileNamesAndExtensions[arraynumber]
-      arraynumber = arraynumber + 1
-     console.log('Custom database is updated, check the dbcreator.txt file');
-     console.log('If the file is a virus, please submit the hash here:');
-     console.log('\x1b[32m%s\x1b[0m', "boof.eu.org/other/av-hashes")
+  function processInput() {
+    fs.open('dbcreator.txt', 'a', 666, function (e, id) {
+      fs.write(id, text + os.EOL, null, 'utf8', function () {
+        fs.close(id, function () {
+          arraynumber = arraynumber + 1
+          //console.log('Custom database is updated, check the dbcreator.txt file');
+          //console.log('If the file is a virus, please submit the hash here:');
+          //console.log('\x1b[32m%s\x1b[0m', "boof.eu.org/other/av-hashes")
+        });
+      });
     });
-   });
-  });
- }
+  }
 }
