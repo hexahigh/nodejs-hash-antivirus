@@ -1,15 +1,16 @@
-var prompt = require("prompt-sync")({ sigint: true });
-var fs = require('fs');
-const http = require('http');
-const https = require('https');
+import promptSync from 'prompt-sync';
+import * as fs from 'fs';
+import * as http from 'http';
+import * as https from 'https';
+
+
+const prompt = promptSync({ sigint: true });
 
 console.log("This will update the database.")
 console.log("Do you wish to proceed? Y/N")
 const useragree = prompt("");
 if (useragree == "Y") {
     console.log("Deleting old files")
-    fs.unlinkSync("h-db.txt")
-    fs.unlinkSync("db.txt")
     console.log("Downloading new files")
     //download first database
     const db69 = fs.createWriteStream("h-db.txt");
@@ -31,5 +32,5 @@ if (useragree == "Y") {
         });
     });
 } else {
-    exit()
+    console.log("Exiting")
 }

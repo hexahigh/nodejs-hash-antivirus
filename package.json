@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "simple js virus scanner",
   "main": "main.js",
+  "type": "module",
   "scripts": {
     "update": "node update.js",
     "custom": "node dbcreator.js",
